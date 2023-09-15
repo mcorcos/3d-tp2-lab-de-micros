@@ -6,7 +6,7 @@ from PyQt5.QtCore import *
 from threading import Thread
 
 # Project modules
-from ui.mainwindow import Ui_MainWindow
+from src.ui.mainwindow import Ui_MainWindow
 
 
 

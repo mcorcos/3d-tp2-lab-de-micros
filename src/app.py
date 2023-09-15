@@ -7,8 +7,8 @@ from PyQt5 import QtWidgets
 import sys
 
 # Main window ui import
-from MainWindow_ import MainWindow
-from UART import readCOM
+from src.MainWindow_ import MainWindow
+from src.UART import readCOM
 
 
 def main():
