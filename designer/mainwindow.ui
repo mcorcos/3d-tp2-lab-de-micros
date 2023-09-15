@@ -591,7 +591,7 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_4">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit">
+                   <widget class="QLineEdit" name="RollLabel_0">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -599,21 +599,21 @@
                      </sizepolicy>
                     </property>
                     <property name="readOnly">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_2">
+                   <widget class="QLineEdit" name="TiltLabel_0">
                     <property name="readOnly">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_3">
+                   <widget class="QLineEdit" name="OrientationLabel_0">
                     <property name="readOnly">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
@@ -664,21 +664,21 @@
                   <item>
                    <widget class="QLineEdit" name="lineEdit_4">
                     <property name="readOnly">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QLineEdit" name="lineEdit_10">
                     <property name="readOnly">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QLineEdit" name="lineEdit_11">
                     <property name="readOnly">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
