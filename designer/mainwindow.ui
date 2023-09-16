@@ -662,21 +662,21 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_11">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_4">
+                   <widget class="QLineEdit" name="RollLabel_1">
                     <property name="readOnly">
                      <bool>false</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_10">
+                   <widget class="QLineEdit" name="TiltLabel_1">
                     <property name="readOnly">
                      <bool>false</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_11">
+                   <widget class="QLineEdit" name="OrientationLabel_1">
                     <property name="readOnly">
                      <bool>false</bool>
                     </property>
@@ -727,21 +727,21 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_5">
+                   <widget class="QLineEdit" name="RollLabel_2">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_21">
+                   <widget class="QLineEdit" name="TiltLabel_2">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_20">
+                   <widget class="QLineEdit" name="OrientationLabel_2">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
@@ -792,21 +792,21 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_13">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_6">
+                   <widget class="QLineEdit" name="RollLabel_3">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_13">
+                   <widget class="QLineEdit" name="TiltLabel_3">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_12">
+                   <widget class="QLineEdit" name="OrientationLabel_3">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
@@ -857,21 +857,21 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_14">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_7">
+                   <widget class="QLineEdit" name="RollLabel_4">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_15">
+                   <widget class="QLineEdit" name="TiltLabel_4">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_14">
+                   <widget class="QLineEdit" name="OrientationLabel_4">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
@@ -922,21 +922,21 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_15">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_8">
+                   <widget class="QLineEdit" name="RollLabel_5">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_17">
+                   <widget class="QLineEdit" name="TiltLabel_5">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_16">
+                   <widget class="QLineEdit" name="OrientationLabel_5">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
@@ -987,21 +987,21 @@
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_16">
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_18">
+                   <widget class="QLineEdit" name="RollLabel_6">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_19">
+                   <widget class="QLineEdit" name="TiltLabel_6">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="lineEdit_9">
+                   <widget class="QLineEdit" name="OrientationLabel_6">
                     <property name="readOnly">
                      <bool>true</bool>
                     </property>

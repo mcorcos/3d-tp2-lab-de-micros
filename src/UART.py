@@ -48,6 +48,7 @@ packet = DataPacket(id= 0 , value_rolling= 0 , value_tilt= 0 , value_orientation
 #           FUNCIONES
 #----------------------------------------------------------------
 detener_hilo = False
+detener_hilo_data = False
 
 def readCOM():
     try:
@@ -74,8 +75,8 @@ def readCOM():
     except Exception as e:
         # Maneja otras excepciones que puedan ocurrir
         print(f"Ocurrió un error inesperado: {e}")
-    finally:
-        ser.close()  # Asegura que se cierre el puerto COM1 en caso de excepción
+   # finally:
+      #  ser.close()  # Asegura que se cierre el puerto COM1 en caso de excepción
 
 
 
@@ -129,7 +130,7 @@ class DataCollectionThread(QThread):
         self.interval = 2  # Intervalo de tiempo en segundos
 
     def run(self):
-        while True:
+        while not detener_hilo_data:
             # Recopila datos en la variable Packet
             packet_data = self.collect_data()  # Reemplaza con tu lógica de recopilación de datos
             self.data_ready_signal.emit(packet_data)
@@ -140,3 +141,7 @@ class DataCollectionThread(QThread):
             return packet
 
 
+# Función para detener el hilo de lectura del puerto COM1
+def detenerHiloCom_data():
+    global detener_hilo_data
+    detener_hilo_data = True
