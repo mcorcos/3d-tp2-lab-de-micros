@@ -9,15 +9,24 @@ import time
 #no se como hcaer defines en python 
 
 ID = 0
-ID_NUMBER = 1
-SIGN_ROLL = 2
-ROLL = 3
-SIGN_TILT = 4
-TILT = 5
-SIGN_OR = 6
-ORIENTATION = 7
-TERMINATOR = 9
-SLASH_N = 10
+ID_NUMBER1 = 1
+ID_NUMBER2 = 2
+ID_NUMBER3 = 3
+SIGN_ROLL = 4
+ROLL1 = 5
+ROLL2 = 6
+ROLL3 = 7
+SIGN_TILT = 8
+TILT1 = 9
+TILT2 = 10
+TILT3 = 11
+SIGN_OR = 12
+ORIENTATION1 = 13
+ORIENTATION2 = 14
+ORIENTATION3 = 15
+TERMINATOR = 16
+SLASH_N = 17
+PACK_LEN = 3
 
 # termino de hacer el enum
 
@@ -63,7 +72,7 @@ def readCOM():
             process_data(linea_de_datos)
             print("Raw data" , linea_de_datos)  # Decodifica los bytes a texto (ajusta el encoding según tus necesidades)
             sys.stdout.flush()
-            time.sleep(2)  # Espera durante el intervalo especificado
+            time.sleep(0.01)  # Espera durante el intervalo especificado
 
     except KeyboardInterrupt:
         # Cierra el puerto COM cuando se interrumpe el programa (Ctrl+C)
@@ -86,23 +95,35 @@ def process_data(data):  # los datos son [ID , id , + , Val_roll , + , Val_tilt 
     data_len = len(data) #el tamanio tiene que ser 9 + el terminador 
 
     # Verifica si los datos tienen al menos el tamaño mínimo esperado
-    if( data_len == SLASH_N  ):
+    if( data_len == (SLASH_N +1)  ):
         if((data[ID] == 'I') and (data[SIGN_ROLL] == '+') or( data[SIGN_ROLL] == '-' )and (data[TERMINATOR] == 'T') ):
-            id = int(data[ID_NUMBER])  # Obtiene el ID del dato
+            
+            
             if(data[SIGN_ROLL] == '+' ):
-                temp_rolling = char_to_decimal(data[ROLL])  # Obtiene el valor numérico
+                temp = data[ROLL1:ROLL1+PACK_LEN]
+                temp_rolling = charsArrayToByte(temp)  # Obtiene el valor numérico
             else:
-                temp_rolling = (-1)*(char_to_decimal(data[ROLL]))
-            if(data[SIGN_TILT] == '+' ):
-                temp_tilt = char_to_decimal(data[TILT])  # Obtiene el valor numérico
-            else:
-                temp_tilt = (-1)*(char_to_decimal(data[TILT]))
-            if(data[SIGN_OR] == '+' ):
-                temp_orientation = char_to_decimal(data[ORIENTATION])  # Obtiene el valor numérico
-            else:
-                temp_orientation = (-1)*(char_to_decimal(data[ORIENTATION]))
+                temp = data[ROLL1:ROLL1+PACK_LEN]
+                temp_rolling = (-1)*(charsArrayToByte(temp))
 
-            packet.id = data[ID_NUMBER]
+
+            if(data[SIGN_TILT] == '+' ):
+                temp = data[TILT1:TILT1+PACK_LEN]
+                temp_tilt = charsArrayToByte(temp)  # Obtiene el valor numérico
+            else:
+                temp = data[TILT1:TILT1+PACK_LEN]
+                temp_tilt = (-1)*(charsArrayToByte(temp))
+
+
+            if(data[SIGN_OR] == '+' ):
+                temp = data[ORIENTATION1:ORIENTATION1+PACK_LEN]
+                temp_orientation = charsArrayToByte(temp)  # Obtiene el valor numérico
+            else:
+                temp = data[ORIENTATION1:ORIENTATION1+PACK_LEN]
+                temp_orientation = (-1)*(charsArrayToByte(temp))
+
+            temp = data[ID_NUMBER1:ID_NUMBER1+PACK_LEN]
+            packet.id = charsArrayToByte(temp)
             packet.value_rolling = temp_rolling
             packet.value_tilt = temp_tilt
             packet.value_orientation = temp_orientation
@@ -127,7 +148,7 @@ class DataCollectionThread(QThread):
 
     def __init__(self):
         super().__init__()
-        self.interval = 2  # Intervalo de tiempo en segundos
+        self.interval = 0.01  # Intervalo de tiempo en segundos
 
     def run(self):
         while not detener_hilo_data:
@@ -145,3 +166,19 @@ class DataCollectionThread(QThread):
 def detenerHiloCom_data():
     global detener_hilo_data
     detener_hilo_data = True
+
+
+def charsArrayToByte(chars_array):
+
+    digit1 = int(chars_array[0])
+    digit2 = int(chars_array[1])
+    digit3 = int(chars_array[2])
+
+    if digit1 < 0 or digit1 > 9 or digit2 < 0 or digit2 > 9 or digit3 < 0 or digit3 > 9:
+        raise ValueError("Los elementos del arreglo deben ser dígitos del 0 al 9")
+
+    byte = digit1 * 100 + digit2 * 10 + digit3
+    if byte > 255:
+        raise ValueError("El valor resultante excede 255")
+
+    return byte

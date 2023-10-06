@@ -1,5 +1,5 @@
 import threading
-
+import time
 # PyQt5 modules
 from PyQt5.QtWidgets import QMainWindow 
 from PyQt5.QtWidgets import  *
@@ -29,6 +29,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
     def update_gui(self, packet_data):
+        time.sleep(0.01)  # Espera durante el intervalo especificado
         print("Signal received:", packet_data.id , packet_data.value_rolling)
         if(packet_data.id == 0):
                 self.RollLabel_0.setText(str(packet_data.value_rolling))
