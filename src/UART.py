@@ -34,6 +34,23 @@ PACK_LEN = 3
 #           CLASES
 #----------------------------------------------------------------
 
+class Board:
+    def __init__(self, id, value_rolling, value_tilt, value_orientation):
+        self.id = id
+        self.value_rolling = value_rolling
+        self.value_tilt = value_tilt
+        self.value_orientation = value_orientation
+
+# Crear una instancia de la clase
+Board0 = Board(id=0, value_rolling=0, value_tilt=1, value_orientation=0)
+Board1 = Board(id=1, value_rolling=0, value_tilt=2, value_orientation=0)
+Board2 = Board(id=2, value_rolling=0, value_tilt=3, value_orientation=0)
+Board3 = Board(id=3, value_rolling=0, value_tilt=4, value_orientation=0)
+Board4 = Board(id=4, value_rolling=0, value_tilt=5, value_orientation=0)
+Board5 = Board(id=5, value_rolling=0, value_tilt=6, value_orientation=0)
+Board6 = Board(id=6, value_rolling=0, value_tilt=7, value_orientation=0)
+Board7 = Board(id=7, value_rolling=0, value_tilt=8, value_orientation=0)
+
 
 
 # Estructura para almacenar los datos recibidos
@@ -57,8 +74,6 @@ packet = DataPacket(id= 0 , value_rolling= 0 , value_tilt= 0 , value_orientation
 #           FUNCIONES
 #----------------------------------------------------------------
 detener_hilo = False
-detener_hilo_data = False
-
 def readCOM():
     try:
         # Abre el puerto COM1 con un baudrate de 9600
@@ -142,30 +157,30 @@ def char_to_decimal(char):
 
 
 
-class DataCollectionThread(QThread):
-    data_ready_signal = pyqtSignal(object)  # Señal personalizada para enviar datos
+# class DataCollectionThread(QThread):
+#     data_ready_signal = pyqtSignal(object)  # Señal personalizada para enviar datos
 
 
-    def __init__(self):
-        super().__init__()
-        self.interval = 0.01  # Intervalo de tiempo en segundos
+#     def __init__(self):
+#         super().__init__()
+#         self.interval = 0.01  # Intervalo de tiempo en segundos
 
-    def run(self):
-        while not detener_hilo_data:
-            # Recopila datos en la variable Packet
-            packet_data = self.collect_data()  # Reemplaza con tu lógica de recopilación de datos
-            self.data_ready_signal.emit(packet_data)
-            time.sleep(self.interval)  # Espera durante el intervalo especificado
-
-
-    def collect_data(self):
-            return packet
+#     def run(self):
+#         while not detener_hilo_data:
+#             # Recopila datos en la variable Packet
+#             packet_data = self.collect_data()  # Reemplaza con tu lógica de recopilación de datos
+#             self.data_ready_signal.emit(packet_data)
+#             time.sleep(self.interval)  # Espera durante el intervalo especificado
 
 
-# Función para detener el hilo de lectura del puerto COM1
-def detenerHiloCom_data():
-    global detener_hilo_data
-    detener_hilo_data = True
+#     def collect_data(self):
+#             return packet
+
+
+# # Función para detener el hilo de lectura del puerto COM1
+# def detenerHiloCom_data():
+#     global detener_hilo_data
+#     detener_hilo_data = True
 
 
 def charsArrayToByte(chars_array):
@@ -182,3 +197,5 @@ def charsArrayToByte(chars_array):
         raise ValueError("El valor resultante excede 255")
 
     return byte
+
+
