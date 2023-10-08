@@ -85,9 +85,7 @@ def readCOM():
             # Lee una línea de datos desde el puerto COM
             linea_de_datos = ser.readline().decode('utf-8')
             process_data(linea_de_datos)
-            print("Raw data" , linea_de_datos)  # Decodifica los bytes a texto (ajusta el encoding según tus necesidades)
             sys.stdout.flush()
-            time.sleep(0.01)  # Espera durante el intervalo especificado
 
     except KeyboardInterrupt:
         # Cierra el puerto COM cuando se interrumpe el programa (Ctrl+C)
@@ -182,7 +180,7 @@ def process_data(data):  # los datos son [ID , id , + , Val_roll , + , Val_tilt 
             packet.value_orientation = temp_orientation
 
             # Realiza alguna acción con el paquete de datos, como imprimirlo
-            print(f"Processed Data = ID: {packet.id}, temp_rolling: {packet.value_rolling}, temp_tilt: {packet.value_tilt}, temp_orientation: {packet.value_orientation}")   
+           # print(f"Processed Data = ID: {packet.id}, temp_rolling: {packet.value_rolling}, temp_tilt: {packet.value_tilt}, temp_orientation: {packet.value_orientation}")   
 
 # Función para detener el hilo de lectura del puerto COM1
 def detenerHiloCom():

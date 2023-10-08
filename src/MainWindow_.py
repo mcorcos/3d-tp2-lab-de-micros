@@ -25,7 +25,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.RollLabel_0.setText(str(Board0.value_rolling))
                         self.TiltLabel_0.setText(str(Board0.value_tilt))
                         self.OrientationLabel_0.setText(str(Board0.value_orientation))
-                        print("Ejecutando board_0_Thread")
                         time.sleep(0.05)  # Espera 50 ms (0.05 segundos)
 
 
@@ -34,7 +33,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.RollLabel_1.setText(str(Board1.value_rolling))
                         self.TiltLabel_1.setText(str(Board1.value_tilt))
                         self.OrientationLabel_1.setText(str(Board1.value_orientation))
-                        print("Ejecutando board_1_Thread")
                         time.sleep(0.05)  # Espera 50 ms (0.05 segundos)
 
         def board_2_function(self):
@@ -42,7 +40,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.RollLabel_2.setText(str(Board2.value_rolling))
                         self.TiltLabel_2.setText(str(Board2.value_tilt))
                         self.OrientationLabel_2.setText(str(Board2.value_orientation))
-                        print("Ejecutando board_2_Thread")
                         time.sleep(0.05)  # Espera 50 ms (0.05 segundos)                      
 
         def board_3_function(self):
@@ -50,7 +47,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.RollLabel_3.setText(str(Board3.value_rolling))
                         self.TiltLabel_3.setText(str(Board3.value_tilt))
                         self.OrientationLabel_3.setText(str(Board3.value_orientation))
-                        print("Ejecutando board_X_Thread")
                         time.sleep(0.05)  # Espera 50 ms (0.05 segundos)
 
         def board_4_function(self):
@@ -58,15 +54,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.RollLabel_4.setText(str(Board4.value_rolling))
                         self.TiltLabel_4.setText(str(Board4.value_tilt))
                         self.OrientationLabel_4.setText(str(Board4.value_orientation))
-                        print("Ejecutando board_4_Thread")
-                        time.sleep(0.05)  # Espera 50 ms (0.05 segundos)   
+                        time.sleep(0.025)  # Espera 50 ms (0.05 segundos)   
 
         def board_5_function(self):
                 while detener_hilo_data:
                         self.RollLabel_5.setText(str(Board5.value_rolling))
                         self.TiltLabel_5.setText(str(Board5.value_tilt))
                         self.OrientationLabel_5.setText(str(Board5.value_orientation))
-                        print("Ejecutando board_5_Thread")
                         time.sleep(0.05)  # Espera 50 ms (0.05 segundos)
 
 
@@ -75,7 +69,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.RollLabel_6.setText(str(Board6.value_rolling))
                         self.TiltLabel_6.setText(str(Board6.value_tilt))
                         self.OrientationLabel_6.setText(str(Board6.value_orientation))
-                        print("Ejecutando board_6_Thread")
                         time.sleep(0.05)  # Espera 50 ms (0.05 segundos)
 
 
