@@ -7,7 +7,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import QObject, pyqtSignal
 # Project modules
 from src.ui.mainwindow import Ui_MainWindow
-from src.UART import Board , Board0 ,Board1 , Board2 ,Board3 ,Board4 ,Board5 ,Board6 ,Board7
+from src.UART import Board , Board0 ,Board1 , Board2 ,Board3 ,Board4 ,Board5 ,Board6 
 
 detener_hilo_data = True
 
@@ -79,13 +79,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         time.sleep(0.05)  # Espera 50 ms (0.05 segundos)
 
 
-        def board_7_function(self):
-                while detener_hilo_data:
-                        self.RollLabel_7.setText(str(Board7.value_rolling))
-                        self.TiltLabel_7.setText(str(Board7.value_tilt))
-                        self.OrientationLabel_7.setText(str(Board7.value_orientation))
-                        print("Ejecutando board_7_Thread")
-                        time.sleep(0.05)  # Espera 50 ms (0.05 segundos)
+
 
 
 
@@ -141,7 +135,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         def on_close_event(self, event: QCloseEvent):
                 # Maneja el evento de cierre de la ventana
                 # Detiene el hilo antes de cerrar la ventana
-                detenerHiloCom_data()
+                detenerHiloCom_data(self)
                 event.accept()  # Acepta el evento de cierre
         
 

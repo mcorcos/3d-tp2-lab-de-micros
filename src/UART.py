@@ -139,6 +139,44 @@ def process_data(data):  # los datos son [ID , id , + , Val_roll , + , Val_tilt 
 
             temp = data[ID_NUMBER1:ID_NUMBER1+PACK_LEN]
             packet.id = charsArrayToByte(temp)
+
+            if(packet.id == 0):
+                Board0.value_rolling = temp_rolling
+                Board0.value_tilt = temp_tilt
+                Board0.value_orientation = temp_orientation
+            
+            if(packet.id == 1):
+                Board1.value_rolling = temp_rolling
+                Board1.value_tilt = temp_tilt
+                Board1.value_orientation = temp_orientation
+            
+            if(packet.id == 2):
+                Board2.value_rolling = temp_rolling
+                Board2.value_tilt = temp_tilt
+                Board2.value_orientation = temp_orientation
+            if(packet.id == 3):
+                Board3.value_rolling = temp_rolling
+                Board3.value_tilt = temp_tilt
+                Board3.value_orientation = temp_orientation
+            if(packet.id == 4):
+                Board4.value_rolling = temp_rolling
+                Board4.value_tilt = temp_tilt
+                Board4.value_orientation = temp_orientation
+
+            if(packet.id == 5):
+                Board5.value_rolling = temp_rolling
+                Board5.value_tilt = temp_tilt
+                Board5.value_orientation = temp_orientation
+
+            if(packet.id == 6):
+                Board6.value_rolling = temp_rolling
+                Board6.value_tilt = temp_tilt
+                Board6.value_orientation = temp_orientation
+
+
+
+
+
             packet.value_rolling = temp_rolling
             packet.value_tilt = temp_tilt
             packet.value_orientation = temp_orientation

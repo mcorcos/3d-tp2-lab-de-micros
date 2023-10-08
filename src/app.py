@@ -31,8 +31,6 @@ def main():
     board_5_Thread.start()
     board_6_Thread = threading.Thread(target=MainWindow.board_6_function , args= (window,))
     board_6_Thread.start()
-    board_7_Thread = threading.Thread(target=MainWindow.board_7_function , args= (window,))
-    board_7_Thread.start()
 
 
 
