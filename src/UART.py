@@ -77,7 +77,7 @@ detener_hilo = False
 def readCOM():
     try:
         # Abre el puerto COM1 con un baudrate de 9600
-        ser = serial.Serial('COM1', baudrate=9600)
+        ser = serial.Serial('COM13', baudrate=9600)
 
         # Realiza las operaciones que necesitas en el puerto COM1 aquí
 
